@@ -37,7 +37,7 @@ module.exports = {
     themeConfig: {
         logo: '/image/C语言图标.webp',   // 导航栏 Logo
         siteTitle: 'C语言程序设计',
-        // outline: 3,
+        outline: 3,      // 在大纲中显示的标题级别
         smoothScroll: true,     // 页面滚动效果
 
         searchMaxSuggestions: 10,       // 搜索框显示的搜索结果数量
