@@ -1,5 +1,5 @@
 module.exports = {
-	base: './',
+    base: '/ljvitepress/',
     title: 'C语言程序设计',
     description: '课堂笔记',
     lang: 'zh-CN',
