@@ -23,7 +23,8 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v1
+      - name: Checkout
+      - uses: actions/checkout@v3
         with:
           fetch-depth: 0 # 如果lastUpdated未启用，则不需要
 
@@ -47,4 +48,15 @@ jobs:
         with:
           path: docs/.vitepress/dist
 
-      
+# Deployment job
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    needs: build
+    runs-on: windows-latest
+    name: Deploy
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v2
